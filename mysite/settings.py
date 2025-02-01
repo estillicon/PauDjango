@@ -52,21 +52,38 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mysite.urls'
 
+#TEMPLATES = [
+ #   {
+  #      "BACKEND": "django.template.backends.django.DjangoTemplates",
+   #     "DIRS": [BASE_DIR / "templates"],  # Agregamos la carpeta templates
+    #    "APP_DIRS": True,
+     #   "OPTIONS": {
+      #      "context_processors": [
+       #         "django.template.context_processors.debug",
+        #        "django.template.context_processors.request",
+         #       "django.contrib.auth.context_processors.auth",
+          #      "django.contrib.messages.context_processors.messages",
+           # ],
+ #       },
+  #  },
+#]
+
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [],  # Antes: [BASE_DIR / "templates"], ahora vacío
+        "APP_DIRS": True,  # Django buscará en cada app automáticamente
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
